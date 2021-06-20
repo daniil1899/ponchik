@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище sessionsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "sessions.dbo.apartments" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="apartments">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Address_City" />
+      <PropertyRef Name="Address_Street" />
+      <PropertyRef Name="Address_House" />
+      <PropertyRef Name="Address_Number" />
+      <PropertyRef Name="Coordinate_latitude" />
+      <PropertyRef Name="Coordinate_longitude" />
+      <PropertyRef Name="TotalArea" />
+      <PropertyRef Name="Rooms" />
+      <PropertyRef Name="Floor" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_House" Type="int" Nullable="false" />
+    <Property Name="Address_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Coordinate_latitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Coordinate_longitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalArea" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rooms" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Floor" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "sessions.dbo.districts" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="districts">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="area" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="area" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "sessions.dbo.houses" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="houses">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Address_City" />
+      <PropertyRef Name="Address_Street" />
+      <PropertyRef Name="Coordinate_latitude" />
+      <PropertyRef Name="Coordinate_longitude" />
+      <PropertyRef Name="TotalFloors" />
+      <PropertyRef Name="TotalArea" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Address_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_House" Type="int" />
+    <Property Name="Address_Number" Type="nvarchar" MaxLength="1" />
+    <Property Name="Coordinate_latitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Coordinate_longitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalFloors" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalArea" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "sessions.dbo.lands" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="lands">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Address_City" />
+      <PropertyRef Name="Address_Street" />
+      <PropertyRef Name="Coordinate_latitude" />
+      <PropertyRef Name="Coordinate_longitude" />
+      <PropertyRef Name="TotalArea" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Address_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address_House" Type="nvarchar" MaxLength="1" />
+    <Property Name="Address_Number" Type="nvarchar" MaxLength="1" />
+    <Property Name="Coordinate_latitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Coordinate_longitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalArea" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище sessionsModelContainer">
+    <EntitySet Name="apartments" EntityType="Self.apartments" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [apartments].[Id] AS [Id], 
+    [apartments].[Address_City] AS [Address_City], 
+    [apartments].[Address_Street] AS [Address_Street], 
+    [apartments].[Address_House] AS [Address_House], 
+    [apartments].[Address_Number] AS [Address_Number], 
+    [apartments].[Coordinate_latitude] AS [Coordinate_latitude], 
+    [apartments].[Coordinate_longitude] AS [Coordinate_longitude], 
+    [apartments].[TotalArea] AS [TotalArea], 
+    [apartments].[Rooms] AS [Rooms], 
+    [apartments].[Floor] AS [Floor]
+    FROM [dbo].[apartments] AS [apartments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="districts" EntityType="Self.districts" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [districts].[name] AS [name], 
+    [districts].[area] AS [area]
+    FROM [dbo].[districts] AS [districts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="houses" EntityType="Self.houses" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [houses].[Id] AS [Id], 
+    [houses].[Address_City] AS [Address_City], 
+    [houses].[Address_Street] AS [Address_Street], 
+    [houses].[Address_House] AS [Address_House], 
+    [houses].[Address_Number] AS [Address_Number], 
+    [houses].[Coordinate_latitude] AS [Coordinate_latitude], 
+    [houses].[Coordinate_longitude] AS [Coordinate_longitude], 
+    [houses].[TotalFloors] AS [TotalFloors], 
+    [houses].[TotalArea] AS [TotalArea]
+    FROM [dbo].[houses] AS [houses]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="lands" EntityType="Self.lands" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [lands].[Id] AS [Id], 
+    [lands].[Address_City] AS [Address_City], 
+    [lands].[Address_Street] AS [Address_Street], 
+    [lands].[Address_House] AS [Address_House], 
+    [lands].[Address_Number] AS [Address_Number], 
+    [lands].[Coordinate_latitude] AS [Coordinate_latitude], 
+    [lands].[Coordinate_longitude] AS [Coordinate_longitude], 
+    [lands].[TotalArea] AS [TotalArea]
+    FROM [dbo].[lands] AS [lands]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

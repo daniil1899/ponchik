@@ -1,0 +1,23 @@
+﻿<Window x:Class="ponyyy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ponyyy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="94*"/>
+            <RowDefinition Height="231*"/>
+            <RowDefinition Height="94*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Coral" Panel.ZIndex="-2"></Grid>
+        <Image Source="Resources/logo.jpg" HorizontalAlignment="Left"></Image>
+        <Grid Grid.Row="2" Background="Aquamarine"></Grid>
+        <Button Content="Start" HorizontalAlignment="Left" Background="Violet" Margin="352,104,0,0" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="31" Click="Button_Click"/>
+        <TextBlock Text="Company " FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+
+    </Grid>
+</Window>
